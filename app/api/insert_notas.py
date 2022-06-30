@@ -16,7 +16,7 @@ class Notas(BaseModel):
     n3: int
     n4: int
 
-
+#Rota para a inserção de notas
 @router.post("/users", status_code=status.HTTP_201_CREATED)
 async def create_user(nota: Notas, idaluno: int, n1: int, n2: int, n3: int, n4: int, settings: Settings = Depends(get_settings)):
     con = psycopg2.connect(host="localhost", database="ArchDB", user="admin", password="admin")

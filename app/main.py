@@ -8,7 +8,7 @@ from app.database.database_session import global_init
 
 log = logging.getLogger("uvicorn")
 
-
+#Criação das rotas da api
 def create_application() -> FastAPI:
     application = FastAPI()
     application.include_router(
@@ -24,7 +24,7 @@ def create_application() -> FastAPI:
 
 app = create_application()
 
-
+#iniciando a api e chamando o método para criação do banco
 @app.on_event("startup")
 async def startup_event():
     log.info("Starting up...")

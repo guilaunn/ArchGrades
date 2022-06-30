@@ -1,6 +1,6 @@
 import psycopg2
 
-
+#chamada na primeisa execução para criação das tabelas no banco e inserção dos primeiros alunos
 class CreateTables:
 
     create_aluno = 'CREATE TABLE if not exists public.aluno(id serial unique primary key, nome varchar(80))'

@@ -1,7 +1,7 @@
 import psycopg2
 from app.models.register import CreateTables
 
-
+#conectando com o banco, verificando se as tabelas ja foram criadas, caso não foram, são criadas
 def global_init() -> None:
 
     con = psycopg2.connect(host="localhost", database="ArchDB", user="admin", password="admin")
@@ -13,5 +13,5 @@ def global_init() -> None:
         steps = [CreateTables()]
         for step in steps:
             step.start()
-
+    con.close()
 

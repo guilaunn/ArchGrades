@@ -8,7 +8,7 @@ from app.config import Settings, get_settings
 router = APIRouter()
 APP_VERSION = os.getenv("APP_VERSION", "1.0.0")
 
-
+#rota para a exibição das notas por aluno
 @router.get("/status")
 async def ping(settings: Settings = Depends(get_settings)):
     con = psycopg2.connect(host="localhost", database="ArchDB", user="admin", password="admin")
